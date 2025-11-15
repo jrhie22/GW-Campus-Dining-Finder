@@ -1,0 +1,719 @@
+/* ========== NAVBAR ========== */
+
+.gw-nav {
+  border-bottom: 1px solid #e6e6e6;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+  background-color: #ffffff;
+}
+.navbar.scrolled {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gw-logo {
+  width: 40px;
+  height: auto;
+}
+
+.gw-brand-text {
+  font-size: 1.4rem;
+  color: #002855; /* GW blue */
+  font-weight: 600;
+}
+
+.gw-nav-link {
+  font-size: 1.05rem;
+  color: #666666 !important;
+  font-weight: 500;
+}
+
+.gw-nav-link:hover {
+  color: #000000 !important;
+}
+
+.cart-icon {
+  font-size: 1.4rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* ========== HERO SECTION ========== */
+
+/* Overall hero container */
+.hero-carousel {
+  height: 40vh;        /* half of a full-screen hero */
+  min-height: 400px;   /* keeps it tall enough on small screens */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fixed text layer in the center */
+.hero-fixed-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 100%;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+/* Background slide container */
+.hero-slide {
+  position: relative;
+  height: 40vh;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Image sources for each slide (keep these filenames the same) */
+.hero-slide-1 {
+  background-image: url("images/hero1.jpg");
+}
+
+.hero-slide-2 {
+  background-image: url("images/hero2.jpg");
+}
+
+.hero-slide-3 {
+  background-image: url("images/hero3.jpg");
+}
+
+/* Dark overlay on every slide */
+.hero-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.55)
+  );
+  z-index: 1;
+}
+
+/* Make sure carousel items fill the hero height */
+.hero-carousel .carousel,
+.hero-carousel .carousel-inner,
+.hero-carousel .carousel-item {
+  height: 100%;
+}
+
+/* Divider line */
+.hero-divider {
+  width: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Buttons */
+.hero-btn-primary {
+  font-weight: 600;
+}
+
+/* Scroll indicator */
+.scroll-line {
+  width: 1px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 0 auto;
+}
+
+.hero-scroll {
+  letter-spacing: 0.15em;
+  margin-top: 10px;
+}
+
+/* Carousel indicators styling */
+.hero-indicators {
+  bottom: 1.5rem;
+  z-index: 15;
+}
+
+.hero-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.hero-indicators .active {
+  background-color: #ffffff;
+}
+
+/* Optional: slightly smaller hero on very small screens */
+@media (max-width: 576px) {
+  .hero-carousel {
+    height: 45vh;
+    min-height: 320px;
+  }
+
+  .hero-slide {
+    height: 45vh;
+    min-height: 320px;
+  }
+
+  .hero-fixed-text h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-fixed-text .lead {
+    font-size: 1rem;
+  }
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.12);
+}
+
+.icon-box {
+  background: #f0f2f5;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  font-size: 28px;
+  color: #003057;
+}
+
+.feature-card h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 15px;
+  color: #555;
+}
+
+/* Quick Access Section */
+.quick-access {
+  background: #fff;
+}
+
+.qa-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.qa-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.qa-icon {
+  width: 60px;
+  height: 60px;
+  background: #0c2340; /* GW Navy Blue */
+  color: white;
+  font-size: 28px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Footer Styling */
+.gw-footer {
+  background-color: #123969; /* GW navy blue */
+  color: #ffffff;
+}
+
+.gw-footer h5 {
+  color: #ffffff;
+}
+
+.footer-link {
+  color: #d1d5db; /* light gray */
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-divider {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-top: 20px;
+}
+
+
+.gw-nav-link.active {
+  color: #000000 !important;
+}
+
+/* ===== GLOBAL (for fixed navbar spacing, if not already set) ===== */
+body {
+  padding-top: 80px;
+}
+
+/* ===== MENUS & HOURS HERO SECTION ===== */
+
+.menus-hero {
+  height: 55vh;
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Foreground content (fixed) */
+.menus-hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 16px;
+}
+
+.menus-title {
+  font-size: 3rem;
+  margin-bottom: 28px;
+}
+
+/* White filter card */
+.menus-filter-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px 24px 18px;
+}
+
+.menus-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+}
+
+/* Go button */
+.menus-go-btn {
+  background-color: #0c2340;
+  color: #ffffff;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.menus-go-btn:hover {
+  background-color: #08152a;
+  color: #ffffff;
+}
+
+/* Search bar */
+.menus-search {
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.menus-search .form-control {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.menus-search .form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Background slides */
+.menus-hero-slide {
+  position: relative;
+  height: 55vh;
+  min-height: 420px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Image files */
+.menus-hero-slide-1 {
+  background-image: url("images/fastfood-slide1.jpg");
+}
+
+.menus-hero-slide-2 {
+  background-image: url("images/fastfood-slide2.jpeg");
+}
+
+.menus-hero-slide-3 {
+  background-image: url("images/fastfood-slide3.jpg");
+}
+
+/* Dark overlay */
+.menus-hero-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.55)
+  );
+  z-index: 1;
+}
+
+/* Ensure carousel fills section height */
+.menus-hero .carousel,
+.menus-hero .carousel-inner,
+.menus-hero .carousel-item {
+  height: 100%;
+}
+
+/* Keep slide behind the content */
+.menus-hero-slide {
+  z-index: 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .menus-title {
+    font-size: 2.4rem;
+  }
+
+  .menus-filter-card {
+    padding: 20px 16px 16px;
+  }
+}
+
+/* ===== NAV CART ICON ===== */
+.cart-icon-link {
+  color: #222;
+  text-decoration: none;
+}
+
+.cart-icon-link:hover {
+  color: #0c2340;
+}
+
+.cart-count {
+  position: absolute;
+  top: -4px;
+  right: -10px;
+  font-size: 0.7rem;
+}
+
+/* ===== MENU RESULTS CARDS ===== */
+.menu-results {
+  padding: 3rem 0 2rem;
+}
+
+.menu-results-title {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.menu-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 18px 20px;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.06);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-desc {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.menu-hall-link {
+  font-size: 0.9rem;
+  color: #0c4a6e;
+  text-decoration: none;
+}
+
+.menu-hall-link:hover {
+  text-decoration: underline;
+}
+
+.menu-tags .menu-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  text-transform: lowercase;
+}
+
+/* tag colors */
+.tag-vegetarian {
+  background-color: #e0f2f1;
+  color: #047857;
+}
+
+.tag-vegan {
+  background-color: #ecfdf3;
+  color: #15803d;
+}
+
+.tag-spicy {
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+.tag-healthy {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+
+.tag-glutenfree {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.menu-price {
+  font-weight: 700;
+  color: #111827;
+}
+
+.add-to-cart-btn {
+  background-color: #b58a3a;
+  color: #ffffff;
+  border-radius: 999px;
+  font-weight: 600;
+  padding-inline: 16px;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #946f2c;
+  color: #ffffff;
+}
+
+/* ===== ICON LEGEND BAR ===== */
+.icon-legend-bar {
+  background-color: #0c2340;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.icon-legend-toggle {
+  font-size: 0.9rem;
+}
+
+.legend-tags .legend-filter-btn {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: #ffffff;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+}
+
+.legend-tags .legend-filter-btn.active,
+.legend-tags .legend-filter-btn:hover {
+  background-color: #ffffff;
+  color: #0c2340;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  margin-right: 6px;
+}
+
+.legend-veg {
+  background-color: #047857;
+}
+
+.legend-vegan {
+  background-color: #16a34a;
+}
+
+.legend-spicy {
+  background-color: #dc2626;
+}
+
+.legend-healthy {
+  background-color: #2563eb;
+}
+
+.legend-glutenfree {
+  background-color: #d97706;
+}
+
+/* === DINING LOCATIONS HERO + MAP === */
+
+.locations-hero {
+  position: relative;
+  height: 500px;          /* smaller than full screen */
+  padding-top: 5rem;     /* room for fixed navbar */
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+/* Map fills hero area behind text */
+#gwMap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+
+/* Text layer */
+.locations-hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* Responsive height tweak */
+@media (max-width: 768px) {
+  .locations-hero {
+    height: 50vh;
+    min-height: 260px;
+  }
+
+  .locations-hero-content h1 {
+    font-size: 2rem;
+  }
+}
+
+/* === LOCATIONS SECTION (FILTERS + CARDS) === */
+
+.locations-section {
+  background-color: #f3f4f6;
+}
+
+/* Filter buttons */
+.location-filters .btn {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.9rem;
+}
+
+.location-filters .btn.active {
+  background-color: #0c2340;
+  color: #ffffff;
+  border-color: #0c2340;
+}
+
+/* Cards */
+.location-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.location-card-top {
+  height: 110px;
+  background: linear-gradient(to bottom, #d1d5db, #9ca3af);
+}
+
+/* Card body content spacing */
+.location-card-body {
+  padding: 16px 18px 14px;
+}
+
+/* subtle active state when linked to a marker */
+.location-card.active {
+  border-color: #b58a3a;
+  box-shadow: 0 0 0 2px rgba(181, 138, 58, 0.4);
+}
+
+.location-card h5 {
+  font-size: 1.05rem;
+}
+
+/* Payment / tag badges */
+.location-badges .badge {
+  font-weight: 500;
+}
+
+/* Rating row */
+.location-rating i {
+  font-size: 0.9rem;
+}
+
+/* Footer area with address */
+.location-card-footer {
+  padding: 12px 18px 16px;
+  border-top: 1px solid #e5e7eb;
+  margin-top: auto;
+  background-color: #f9fafb;
+  font-size: 0.8rem;
+}
+
+.location-address-box {
+  background-color: #e5e7eb;
+  border-radius: 8px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.locations-map-bg {
+  position: fixed;
+  /* or top:0; left:0; width:100%; height:100vh; */
+}
+
+.location-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  cursor: default;
+}
+
+.location-card-body {
+  padding: 16px 18px 18px;
+}
+
+.location-card-image img {
+  display: block;
+}
+
+.location-reviews-list {
+  max-height: 150px;
+  overflow-y: auto;
+}

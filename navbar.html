@@ -1,0 +1,112 @@
+<!-- navbar.html -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+  <div class="container">
+
+    <!-- Logo + Text -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/gwlogo.jpg" alt="GW Logo" class="gw-logo me-2">
+      <span class="gw-brand-text">Dining</span>
+    </a>
+
+    <!-- Mobile toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gwNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="gwNavbar">
+      <ul class="navbar-nav mx-auto gap-lg-4 mt-3 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link gw-nav-link" href="dining-locations.html" data-page="home">Dining Locations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link gw-nav-link" href="menus-hours.html" data-page="menus">Menus &amp; Hours</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link gw-nav-link" href="#" data-page="discounts">Discounts &amp; Perks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link gw-nav-link" href="#" data-page="mealplans">Meal Plans</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link gw-nav-link" href="#" data-page="services">Student Services</a>
+        </li>
+      </ul>
+
+      <!-- Cart button -->
+      <div class="d-flex align-items-center ms-lg-3">
+        <button
+          class="btn btn-link position-relative p-0 border-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#cartOffcanvas"
+          aria-controls="cartOffcanvas"
+        >
+          <i class="bi bi-cart3 fs-4"></i>
+          <span
+            class="cart-count-badge position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            id="cart-count"
+          >
+            0
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- CART OFFCANVAS -->
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="cartOffcanvas"
+  aria-labelledby="cartOffcanvasLabel"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="cartOffcanvasLabel">Your Order</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body d-flex flex-column">
+
+    <!-- Items -->
+    <div id="cartItemsContainer" class="mb-3">
+      <!-- JS renders items here -->
+    </div>
+
+    <!-- Summary -->
+    <div id="cartSummary" class="mb-3 small">
+      <!-- JS renders totals here -->
+    </div>
+
+    <!-- Mode selection -->
+    <div class="btn-group w-100 mb-3" role="group" aria-label="Dine in or pickup">
+      <button type="button" class="btn btn-outline-primary active" id="btnDineIn">
+        Dine In
+      </button>
+      <button type="button" class="btn btn-outline-primary" id="btnPickup">
+        Pickup
+      </button>
+    </div>
+
+    <!-- Mode-specific content (ticket / payment) -->
+    <div id="cartModeContent" class="mb-3 small">
+      <p class="text-muted mb-0">
+        Choose <strong>Dine In</strong> or <strong>Pickup</strong> above, then click
+        <strong>Proceed to checkout</strong>.
+      </p>
+    </div>
+
+    <!-- Checkout + clear -->
+    <div class="mt-auto pt-2 border-top">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <button class="btn btn-link text-danger p-0" id="clearCartBtn">
+          Clear cart
+        </button>
+        <button class="btn btn-primary" id="cartCheckoutBtn">
+          Proceed to checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

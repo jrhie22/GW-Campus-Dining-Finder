@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GW Dining | Dining Locations</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Shared navbar -->
+  <div id="navbar-container"></div>
+
+  <script>
+    const CURRENT_PAGE = "locations";
+
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("navbar-container").innerHTML = html;
+        const activeLink = document.querySelector(
+          `.gw-nav-link[data-page="${CURRENT_PAGE}"]`
+        );
+        if (activeLink) activeLink.classList.add("active");
+      })
+      .catch(err => console.error("Navbar load error:", err));
+  </script>
+
+  <main>
+
+    <!-- HERO: Google Map as background with overlay text -->
+    <section
+      class="locations-hero d-flex align-items-center justify-content-center text-center text-white"
+    >
+      <!-- Map layer -->
+      <div id="gwMap" class="locations-map-bg"></div>
+
+      <!-- Dark overlay -->
+      <div class="locations-hero-overlay"></div>
+
+      <!-- Text on top of map -->
+      <div class="locations-hero-content position-relative">
+        <h1 class="display-4 fw-light mb-3">Dining Locations</h1>
+        <hr class="hero-divider mx-auto mb-3" />
+        <p class="lead mb-0">
+          Discover exceptional dining experiences across GW's campus.
+        </p>
+      </div>
+    </section>
+
+    <!-- LIST + FILTERS UNDER THE MAP -->
+    <section class="locations-list-section py-5 bg-light">
+      <div class="container">
+
+        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4">
+          <div>
+            <h2 class="h4 mb-1">Campus Dining Locations</h2>
+            <p class="text-muted mb-0">
+              Browse all GW dining halls, cafés, and specialty locations.
+            </p>
+          </div>
+
+          <!-- Campus filter buttons (must match data in dining-locations.json) -->
+          <div class="btn-group mt-3 mt-md-0" role="group" aria-label="Campus filter">
+            <button type="button"
+                    class="btn btn-outline-secondary active"
+                    data-campus-filter="all">
+              All
+            </button>
+            <button type="button"
+                    class="btn btn-outline-secondary"
+                    data-campus-filter="Foggy Bottom">
+              Foggy Bottom
+            </button>
+            <button type="button"
+                    class="btn btn-outline-secondary"
+                    data-campus-filter="Mount Vernon">
+              Mount Vernon
+            </button>
+            <button type="button"
+                    class="btn btn-outline-secondary"
+                    data-campus-filter="Hillel">
+              Hillel
+            </button>
+          </div>
+        </div>
+
+        <!-- Cards get injected here by main.js -->
+        <div id="locationsCards" class="row g-4">
+          <!-- JS will render location cards -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared footer -->
+  <div id="footer-container"></div>
+
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("footer-container").innerHTML = html;
+      })
+      .catch(err => console.error("Footer load error:", err));
+  </script>
+
+  <!-- Main JS (cart + menus + map + cards + reviews) -->
+  <script src="main.js"></script>
+
+  <!-- Google Maps API (uses initGWMap defined in main.js) -->
+  <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9nqNYd2uw1xgJyKh3bNmwdkMoqPALEHQ&callback=initGWMap&v=weekly">
+  </script>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
